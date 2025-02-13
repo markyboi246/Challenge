@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a2e;
+    overflow: hidden;
+}
+
+/* Sky Background */
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(to top, #ff758c, #ff7eb3);
+}
+
+.moon {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: url('https://i.imgur.com/8Akkqht.png') repeat;
+    opacity: 0.8;
+}
+
+/* Moving Clouds */
+.cloud {
+    position: absolute;
+    top: 10%;
+    width: 100px;
+    height: 50px;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.6;
+}
+
+.cloud1 {
+    left: 5%;
+    animation: moveClouds 20s linear infinite;
+}
+
+.cloud2 {
+    left: 60%;
+    animation: moveClouds 25s linear infinite reverse;
+}
+
+@keyframes moveClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); }
+}
+
+/* City Buildings */
+.city {
+    position: absolute;
+    bottom: 20vh;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.building {
+    width: 100px;
+    height: 150px;
+    background: linear-gradient(to top, #2b2e4a, #53354a);
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Windows */
+.building::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, rgba(0,0,0,0) 70%);
+    top: 10%;
+    left: 10%;
+    opacity: 0.7;
+}
+
+/* Road */
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    background: #222;
+}
+
+/* Car Animation */
+.car {
+    position: absolute;
+    bottom: 10px;
+    left: -100px;
+    width: 80px;
+    height: 40px;
+    background: red;
+    border-radius: 10px;
+    animation: moveCar 5s linear infinite;
+}
+
+@keyframes moveCar {
+    0% { left: -100px; }
+    100% { left: 110vw; }
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    bottom: 10%;
+    width: 30px;
+    height: 30px;
+    background: red;
+    clip-path: polygon(50% 0%, 100% 35%, 75% 100%, 50% 85%, 25% 100%, 0% 35%);
+    animation: floatHearts 5s infinite;
+}
+
+.heart1 {
+    left: 20%;
+    animation-duration: 6s;
+}
+
+.heart2 {
+    left: 50%;
+    animation-duration: 7s;
+}
+
+.heart3 {
+    left: 80%;
+    animation-duration: 8s;
+}
+
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
