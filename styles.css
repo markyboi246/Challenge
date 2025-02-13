@@ -3,10 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color:lightpink;
 }
 
 body {
-    background-color: #1a1a2e;
+    background-color: lightpink;
     overflow: hidden;
     z-index: 0;
 }
@@ -14,6 +15,7 @@ body {
 /* Sky Background */
 .sky {
     position:absolute;
+    color:lightpink;
 
     width: 100%;
     height: 50vh;
@@ -94,23 +96,7 @@ body {
     100% { transform: translateX(110vw); opacity: 0.5; }
 }
 
-/* City Buildings */
-.city {
-    position: absolute;
-    bottom: 20vh;
-    width: 100%;
-    height: 30vh;
-    display: flex;
-    justify-content: space-around;
-}
 
-.building {
-    width: 100px;
-    height: 150px;
-    background: linear-gradient(to top, #2b2e4a, #53354a);
-    border-radius: 10px;
-    position: relative;
-}
 
 /* Road */
 .road {
@@ -126,17 +112,23 @@ body {
     position: absolute;
     bottom: 10px;
     left: -100px;
-    width: 80px;
-    height: 40px;
-    background: red;
-    border-radius: 10px;
+    width: 100px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
     animation: moveCar 5s linear infinite;
+}
+
+.car img {
+    width: 100%; /* Make the image fill the car div */
+    height: 100%; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image doesn't stretch */
+    
 }
 
 @keyframes moveCar {
     0% { left: -100px; }
     100% { left: 110vw; }
 }
+
 
 /* Floating Hearts */
 .heart {
@@ -161,11 +153,42 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    z-index: 3;
+    position: relative; /* Ensure it stays in the normal document flow */
+    margin-top: 100px; /* Increase spacing to avoid overlap */
+    z-index: 5; /* Higher than other elements */
+    align-items: baseline;
 }
 
 .romantic-couple img {
-    width: 300px;
-    height: auto;
+    width: 50px;
+    position: relative; /* Keep it in normal document flow */
+    
+}
+
+.button {
+    display: inline-block;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 20px 40px; /* Adjust padding for size */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    cursor: pointer; /* Change cursor to a hand on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.button h1 {
+    margin: 0;
+    font-size: 24px; /* Adjust font size */
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.1); /* Slightly grow on hover */
+}
+
+.button:active {
+    transform: scale(1); /* Reset the scaling effect on click */
 }
